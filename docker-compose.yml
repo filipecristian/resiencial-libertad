@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+  productapp-db:
+    image: mysql
+    restart: always
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE : root
+      MYSQL_ROOT_PASSWORD: libertad
+
+  productapp:
+    build: ./docker/php
+    volumes:
+      - ./:/var/www
+    depends_on:
+      - productapp-db
+
+  productapp-nginx:
+    build: ./docker/nginx
+    restart: always
+    ports:
+      - "8002:80"
+    volumes:
+      - ./:/var/www
+    depends_on:
+      - productapp
