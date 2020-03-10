@@ -1,22 +1,24 @@
 version: '3.7'
 services:
-  productapp-db:
-    image: mysql
+  productapp-mongodb:
+    container_name: app_mongodb
+    image: mongo:4.0
+    environment:
+      TZ: America/Sao_Paulo
     restart: always
     volumes:
-      - ./docker/mysql/data:/var/lib/mysql
-    environment:
-      MYSQL_DATABASE : root
-      MYSQL_ROOT_PASSWORD: libertad
+      - ./mongo/data:/etc/mongo
 
   productapp:
+    container_name: app_php
     build: ./docker/php
     volumes:
       - ./:/var/www
     depends_on:
-      - productapp-db
+      - productapp-mongodb
 
   productapp-nginx:
+    container_name: app_nginx
     build: ./docker/nginx
     restart: always
     ports:
