@@ -27,6 +27,11 @@ RUN docker-php-ext-install \
         pcntl \
         opcache
 
+RUN pecl install -f mongodb-1.6.1 \
+    && pecl install timezonedb \
+    && docker-php-ext-enable mongodb \
+    && docker-php-ext-enable timezonedb
+
 RUN chmod -R 755 /usr/local/lib/php/extensions/
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer \
