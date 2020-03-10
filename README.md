@@ -3,9 +3,9 @@ Esta aplicação tem o objetivo de fornecer todo back-end para o sistema mobile 
 
 ---
 ### Stack
-- Laravel (PHP 7.4)
-- MongoDB (Base de Dados)
-- Nginx (Sevidor WEB)
+- Laravel
+- MongoDB
+- Nginx
 
 
 ### Pré-requisitos
