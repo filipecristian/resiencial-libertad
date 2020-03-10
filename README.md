@@ -9,7 +9,7 @@ Esta aplicação tem o objetivo de fornecer todo back-end para o sistema mobile 
 
 
 ### Pré-requisitos
-- Docker (docker-compose)
+- Docker
 
 ### Requisitos opicionais
 - IDE (PHPStorm) ou VScode
