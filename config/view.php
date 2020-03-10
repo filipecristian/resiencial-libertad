@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'paths' => [
+    'paths'    => [
         resource_path('views'),
     ],
 
@@ -44,6 +44,6 @@ return [
      |
      */
 
-    'expires' => env('VIEW_CHECK_EXPIRATION', true),
+    'expires'  => env('VIEW_CHECK_EXPIRATION', true),
 
 ];
