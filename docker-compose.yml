@@ -1,11 +1,12 @@
 version: '3.7'
 
 services:
-  productapp-mongodb:
-    container_name: app_mongodb
-    image: mongo:4.0
+  productapp-db:
+    container_name: app_db
+    image: mysql
     environment:
-      TZ: America/Sao_Paulo
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel
     restart: always
     volumes:
       - productapp_db
